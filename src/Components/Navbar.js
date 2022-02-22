@@ -1,14 +1,18 @@
-import { Component, Fragment } from "react";
+import { Component } from "react";
 import Carro from "./Carro";
 import Logo from './Logo'
 
 class Navbar extends Component {
    render(){
-      const {cantidadCarro} = this.props
+      const {carro, carroVisible, mostrarCarro} = this.props
       return(
          <nav style={styles.navbar}>
             <Logo/>
-            <Carro cantidadCarro ={cantidadCarro.map(z => z.cantidad)}/>
+            <Carro 
+               carro = {carro}
+               carroVisible = {carroVisible}
+               mostrarCarro = { mostrarCarro }
+            />           
          </nav>
       )
    }
